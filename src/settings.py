@@ -101,7 +101,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'accounts',
-    'main'
+    'main',
+    'courses'
 )
 
 try:

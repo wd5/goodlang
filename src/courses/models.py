@@ -14,7 +14,7 @@ class Lesson(models.Model):
         ordering = ['number']
     
     def save(self, *args, **kwargs):
-        if not self.pk:
+        if not self.pk and not self.number:
             try:
                 self.number = Lesson.objects.filter(cource=self.cource)[:1] \
                     .get().number+1
@@ -32,4 +32,4 @@ class Word(models.Model):
     def save(self, *args, **kwargs):
         if not self.description:
             self.description = self.translation
-        super(Lesson, self).save(*args, **kwargs)    
+        super(Word, self).save(*args, **kwargs)    
